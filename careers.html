@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Careers - Noldith IT Solutions</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #000000;
+            --accent: #FFD700;
+            --text-dark: #2d3748;
+            --text-light: #718096;
+            --white: #ffffff;
+            --gray-50: #f7fafc;
+            --gradient-gold: linear-gradient(135deg, #FFD700 0%, #FFA500 50%, #FF8C00 100%);
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        header {
+            background: var(--primary);
+            color: var(--white);
+            padding: 2rem 0;
+            text-align: center;
+        }
+        .back-link {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 600;
+        }
+        .back-link:hover {
+            text-decoration: underline;
+        }
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            color: var(--accent);
+        }
+        .content {
+            padding: 4rem 0;
+            background: var(--white);
+        }
+        .section {
+            margin-bottom: 3rem;
+        }
+        .section h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            border-bottom: 2px solid var(--accent);
+            padding-bottom: 0.5rem;
+        }
+        .section p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+        .jobs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        .job-card {
+            background: var(--gray-50);
+            padding: 2rem;
+            border-radius: 12px;
+            border-left: 4px solid var(--accent);
+            transition: transform 0.3s ease;
+        }
+        .job-card:hover {
+            transform: translateY(-5px);
+        }
+        .job-card h3 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+            font-family: 'Playfair Display', serif;
+        }
+        .job-type {
+            color: var(--accent);
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+        .benefits-list {
+            list-style: none;
+            margin-top: 1rem;
+        }
+        .benefits-list li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #eee;
+        }
+        .benefits-list li:before {
+            content: "✓";
+            color: var(--accent);
+            font-weight: bold;
+            margin-right: 10px;
+        }
+        .apply-btn {
+            background: var(--gradient-gold);
+            color: var(--primary);
+            padding: 12px 24px;
+            border: none;
+            border-radius: 6px;
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 1rem;
+            transition: transform 0.3s ease;
+        }
+        .apply-btn:hover {
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="index.html" class="back-link">← Back to Home</a>
+        <div class="container">
+            <h1>Join Our Team</h1>
+        </div>
+    </header>
+
+    <div class="content">
+        <div class="container">
+            <div class="section">
+                <h2>Why Work at Noldith?</h2>
+                <p>At Noldith IT Solutions, we believe our people are our greatest asset. We foster a culture of innovation, continuous learning, and collaboration where every team member can thrive and make a meaningful impact.</p>
+                <p>Join a dynamic team of professionals who are passionate about technology and committed to delivering exceptional results for our clients. We offer competitive compensation, comprehensive benefits, and opportunities for professional growth.</p>
+            </div>
+
+            <div class="section">
+                <h2>Our Benefits</h2>
+                <ul class="benefits-list">
+                    <li>Competitive salary and performance bonuses</li>
+                    <li>Professional development and training opportunities</li>
+                    <li>Flexible working arrangements</li>
+                    <li>Modern office environment with latest technology</li>
+                    <li>Team building activities and company events</li>
+                    <li>Career advancement opportunities</li>
+                    <li>Collaborative and inclusive work culture</li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h2>Current Openings</h2>
+                <div class="jobs-grid">
+                    <div class="job-card">
+                        <h3>Cloud Solutions Intern</h3>
+                        <div class="job-type">Internship</div>
+                        <p>We are seeking a highly skilled IT Solutions Architect to lead the design, implementation, and management of IT solutions for our clients. This role will also take on key responsibilities related to project management and business development, ensuring seamless project execution and customer engagement.</p>
+                        <a href="https://irp.cdn-website.com/a26c8dbe/files/uploaded/Noldith_Cloud_Solutions_Technical_Intern.pdf" target="_blank" class="apply-btn">Apply Now</a>
+                    </div>
+
+                    <div class="job-card">
+                        <h3>Cloud Sales Intern</h3>
+                        <div class="job-type">Internship</div>
+                        <p>We are seeking a highly skilled IT Solutions Architect to lead the design, implementation, and management of IT solutions for our clients. This role will also take on key responsibilities related to project management and business development, ensuring seamless project execution and customer engagement.</p>
+                        <a href="https://irp.cdn-website.com/a26c8dbe/files/uploaded/Noldith_Cloud_Solutions_Sales_Intern.pdf" target="_blank" class="apply-btn">Apply Now</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Don't See Your Role?</h2>
+                <p>We're always looking for talented individuals to join our team. If you don't see a position that matches your skills but believe you'd be a great fit for Noldith, we'd love to hear from you!</p>
+                <a href="mailto:jobs@noldith.com?subject=General Application" class="apply-btn">Send Us Your Resume</a>
+            </div>
+
+            <div class="section">
+                <h2>Application Process</h2>
+                <p>Our hiring process is designed to be thorough yet efficient:</p>
+                <ol style="margin-left: 2rem; margin-top: 1rem;">
+                    <li style="margin-bottom: 0.5rem;"><strong>Application Review:</strong> We review all applications carefully</li>
+                    <li style="margin-bottom: 0.5rem;"><strong>Initial Interview:</strong> Phone or video call to discuss your background</li>
+                    <li style="margin-bottom: 0.5rem;"><strong>Technical Assessment:</strong> Role-specific technical evaluation</li>
+                    <li style="margin-bottom: 0.5rem;"><strong>Final Interview:</strong> Meet with the team and leadership</li>
+                    <li style="margin-bottom: 0.5rem;"><strong>Offer:</strong> We'll make an offer if you're the right fit</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

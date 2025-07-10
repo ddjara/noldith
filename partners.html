@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Our Partners - Noldith IT Solutions</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #000000;
+            --secondary: #1a1a1a;
+            --accent: #FFD700;
+            --accent-dark: #B8860B;
+            --text-dark: #2d3748;
+            --text-light: #718096;
+            --white: #ffffff;
+            --gray-50: #f7fafc;
+            --gray-100: #edf2f7;
+            --gold-light: #FFF8DC;
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        header {
+            background: rgba(64, 64, 64, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255, 215, 0, 0.3);
+        }
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.5rem 0;
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--accent);
+        }
+        .logo img {
+            width: 60px;
+            height: 60px;
+        }
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+        nav a {
+            text-decoration: none;
+            color: var(--white);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        nav a:hover {
+            color: var(--accent);
+        }
+        .dropdown {
+            position: relative;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background: rgba(64, 64, 64, 0.95);
+            min-width: 200px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+            border-radius: 8px;
+            top: 100%;
+            left: 0;
+            z-index: 1001;
+            border: 1px solid rgba(255, 215, 0, 0.3);
+        }
+        .dropdown-content a {
+            color: var(--white);
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            transition: background 0.3s;
+        }
+        .dropdown-content a:hover {
+            background: rgba(255, 215, 0, 0.1);
+            color: var(--accent);
+        }
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+        .dropdown > a::after {
+            content: ' ▼';
+            font-size: 0.8rem;
+        }
+        .section {
+            padding: 80px 0 80px;
+            background: var(--white);
+        }
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 3rem;
+            position: relative;
+        }
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(45deg, var(--accent), var(--accent-dark));
+        }
+        .partners-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 3rem;
+            margin-top: 3rem;
+            align-items: center;
+        }
+        .partner-logo {
+            text-align: center;
+            padding: 2rem;
+            border-radius: 12px;
+            transition: transform 0.3s, box-shadow 0.3s;
+            background: var(--gray-50);
+        }
+        .partner-logo:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(255, 215, 0, 0.1);
+        }
+        .partner-logo img {
+            max-width: 150px;
+            max-height: 80px;
+            width: auto;
+            height: auto;
+            filter: grayscale(100%);
+            transition: filter 0.3s;
+        }
+        .partner-logo:hover img {
+            filter: grayscale(0%);
+        }
+        footer {
+            background: var(--primary);
+            color: var(--white);
+            text-align: center;
+            padding: 2rem 0;
+            border-top: 2px solid var(--accent);
+        }
+        @media (max-width: 768px) {
+            .partners-grid {
+                grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+                gap: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <img src="noldith logo.png" alt="Noldith Logo" />
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="Noldith.html">Home</a></li>
+                        <li><a href="Noldith.html#services">Services</a></li>
+                        <li class="dropdown">
+                            <a href="Noldith.html#about">About Us</a>
+                            <div class="dropdown-content">
+                                <a href="company.html" target="_blank">The Company</a>
+                                <a href="team.html" target="_blank">Our Team</a>
+                                <a href="partners.html" target="_blank">Our Partners</a>
+                            </div>
+                        </li>
+                        <li><a href="Noldith.html#contact">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">MEET OUR INTEGRATION PARTNERS</h2>
+            <p style="text-align: center; font-size: 1.1rem; color: var(--text-light); margin-bottom: 2rem;">At Noldith, we are proud to collaborate with a network of trusted partners who share our commitment to innovation, quality, and impact. Together, we combine strengths to deliver exceptional value and drive meaningful solutions for our clients. These partnerships are at the heart of what we do, enabling us to grow, evolve, and make a lasting difference.</p>
+            <div class="partners-grid">
+                <div class="partner-logo">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Microsoft_logo.svg/512px-Microsoft_logo.svg.png" alt="Microsoft" />
+                </div>
+                <div class="partner-logo">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/Amazon_Web_Services_Logo.svg/512px-Amazon_Web_Services_Logo.svg.png" alt="AWS" />
+                </div>
+                <div class="partner-logo">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Zoho_logo.svg/512px-Zoho_logo.svg.png" alt="Zoho" />
+                </div>
+                <div class="partner-logo">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/62/Fortinet_logo.svg/512px-Fortinet_logo.svg.png" alt="Fortinet" />
+                </div>
+                <div class="partner-logo">
+                    <img src="https://via.placeholder.com/200x80/333333/FFFFFF?text=AXXEND" alt="Axxend Corporation" />
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Noldith IT Solutions. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
