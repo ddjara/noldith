@@ -75,11 +75,14 @@
             padding: 0 20px;
         }
         header {
-            background: transparent;
-            position: absolute;
+            background: linear-gradient(135deg, rgba(15, 23, 42, 0.95) 0%, rgba(30, 41, 59, 0.95) 100%);
+            backdrop-filter: blur(20px);
+            box-shadow: 0 4px 30px rgba(59, 130, 246, 0.1);
+            position: fixed;
             width: 100%;
             top: 0;
             z-index: 1000;
+            border-bottom: 1px solid rgba(59, 130, 246, 0.3);
             transition: all 0.3s ease;
         }
         
@@ -96,9 +99,7 @@
         }
         
         header.scrolled {
-            position: fixed;
             background: linear-gradient(135deg, rgba(15, 23, 42, 0.98) 0%, rgba(30, 41, 59, 0.98) 100%);
-            backdrop-filter: blur(20px);
             box-shadow: 0 8px 40px rgba(59, 130, 246, 0.2);
             border-bottom: 2px solid var(--accent);
         }
@@ -144,15 +145,15 @@
         .dropdown-content {
             display: none;
             position: absolute;
-            background: rgba(0, 0, 0, 0.3);
-            backdrop-filter: blur(15px);
+            background: rgba(15, 23, 42, 0.95);
+            backdrop-filter: blur(10px);
             min-width: 200px;
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 8px 16px rgba(59, 130, 246, 0.2);
             border-radius: 8px;
             top: 100%;
             left: 0;
             z-index: 1001;
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(59, 130, 246, 0.3);
         }
         .dropdown-content a {
             color: var(--white);
@@ -210,7 +211,7 @@
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
-            padding: 0;
+            padding: 120px 0 100px;
             text-align: center;
             position: relative;
             min-height: 100vh;
@@ -1233,12 +1234,12 @@
             <h2 class="section-title elegant-text fade-in">Our Services</h2>
             <div class="services-grid">
                 <div class="service-card" style="background-image: url('Custom Software Development.jpg')">
-                    <h3>Software and Hardware Sales</h3>
-                    <p>Comprehensive range of premium software licenses and cutting-edge hardware solutions to meet your business technology requirements and enhance operational efficiency.</p>
+                    <h3>Custom Software Development</h3>
+                    <p>Build scalable, secure applications tailored to your business needs using cutting-edge technologies and industry best practices.</p>
                 </div>
                 <div class="service-card" style="background-image: url('IT Strategy and Consulting.jpg')">
-                    <h3>IT Infrastructure Consulting</h3>
-                    <p>Expert guidance on designing, implementing, and optimizing robust IT infrastructure to support your business growth and ensure reliable operations.</p>
+                    <h3>IT Strategy & Consulting</h3>
+                    <p>Strategic technology planning and consulting to optimize your IT investments and accelerate digital transformation.</p>
                 </div>
                 <div class="service-card" style="background-image: url('Cloud Solutions.jpg')">
                     <h3>Cloud Solutions</h3>
@@ -1506,7 +1507,15 @@
             }
         }
         
-        // Header scroll effect disabled - header blends with hero
+        // Header scroll effect
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
         
         // Smooth scroll animation observer
         const observerOptions = {
