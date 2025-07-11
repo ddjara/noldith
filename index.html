@@ -1158,29 +1158,77 @@
             z-index: 1001;
             transition: width 0.1s ease;
         }
-        @media (max-width: 768px) {
+        /* Tablet Styles */
+        @media (max-width: 1024px) {
+            .container {
+                padding: 0 15px;
+            }
             .hero h1 {
+                font-size: 3.2rem;
+            }
+            .section-title {
                 font-size: 2.5rem;
+            }
+            .about-content {
+                gap: 3rem;
+            }
+            .partners-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 2rem;
+            }
+        }
+        
+        /* Mobile Styles */
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 10px;
+            }
+            .hero {
+                min-height: 80vh;
+                padding: 100px 0 60px;
+            }
+            .hero h1 {
+                font-size: 2.2rem;
+                margin-bottom: 1.5rem;
+            }
+            .hero p {
+                font-size: 1.1rem;
+                margin-bottom: 2rem;
+            }
+            .section {
+                padding: 50px 0;
+            }
+            .section-title {
+                font-size: 2rem;
+                margin-bottom: 2rem;
             }
             .about-content {
                 grid-template-columns: 1fr;
                 gap: 2rem;
             }
+            .about-text h2 {
+                font-size: 2rem;
+            }
             .services-grid {
                 grid-template-columns: 1fr;
+                gap: 1.5rem;
             }
-            .testimonials-grid {
-                grid-template-columns: 1fr;
+            .service-card {
+                min-height: 280px;
+                padding: 2rem;
             }
-            .stats-grid {
+            .partners-grid {
                 grid-template-columns: repeat(2, 1fr);
+                gap: 1.5rem;
             }
             .contact-info-horizontal {
                 grid-template-columns: 1fr;
                 gap: 1rem;
+                padding: 1rem;
             }
             .contact-item {
-                text-align: left;
+                text-align: center;
+                padding: 0.5rem 0;
             }
             .form-map-section {
                 grid-template-columns: 1fr;
@@ -1189,8 +1237,40 @@
             .form-row {
                 grid-template-columns: 1fr;
             }
-            nav ul {
-                gap: 1rem;
+        }
+        
+        /* Small Mobile Styles */
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            .hero p {
+                font-size: 1rem;
+            }
+            .section-title {
+                font-size: 1.8rem;
+            }
+            .about-text h2 {
+                font-size: 1.8rem;
+            }
+            .service-card {
+                min-height: 250px;
+                padding: 1.5rem;
+            }
+            .service-card h3 {
+                font-size: 1.4rem;
+            }
+            .partners-grid {
+                grid-template-columns: 1fr;
+            }
+            .contact-info-horizontal {
+                padding: 0.5rem;
+            }
+            .contact-item h4 {
+                font-size: 0.8rem;
+            }
+            .contact-item p {
+                font-size: 0.7rem;
             }
         }
     </style>
