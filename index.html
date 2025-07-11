@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <title>Noldith Company Limited</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
@@ -50,7 +50,7 @@
             color: var(--primary);
         }
         body {
-            font-family: 'Inter', sans-serif;
+            font-family: 'Poppins', sans-serif;
             line-height: 1.6;
             color: var(--text-dark);
             overflow-x: hidden;
@@ -200,18 +200,32 @@
             width: 80%;
         }
         .hero {
-            background: 
-                linear-gradient(135deg, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0.65) 100%),
-                url('Modern Business.jpg');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
             padding: 120px 0 100px;
             text-align: center;
             position: relative;
             min-height: 100vh;
             display: flex;
             align-items: center;
+        }
+        
+        .hero-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -2;
+        }
+        
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0.65) 100%);
+            z-index: -1;
         }
         .hero::before {
             content: '';
@@ -373,77 +387,70 @@
             margin-top: 3rem;
         }
         .service-card {
-            background-size: cover;
-            background-position: center;
-            padding: 2.5rem;
+            background: var(--white);
             border-radius: 20px;
-            box-shadow: 0 8px 30px rgba(59, 130, 246, 0.12);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
             text-align: center;
             transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-            border: 1px solid rgba(59, 130, 246, 0.1);
+            border: 1px solid var(--gray-200);
             position: relative;
-            min-height: 350px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
             overflow: hidden;
         }
         
-        .service-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(135deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.5) 100%);
-            transition: all 0.4s ease;
-        }
-        
         .service-card:hover {
-            transform: translateY(-10px) scale(1.02);
-            box-shadow: 0 20px 60px rgba(59, 130, 246, 0.25);
-            border-color: var(--accent);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+            border-color: var(--gold);
         }
         
-        .service-card:hover::before {
-            background: linear-gradient(135deg, rgba(0, 0, 0, 0.6) 0%, rgba(59, 130, 246, 0.1) 100%);
+        .service-image {
+            width: 100%;
+            height: 200px;
+            background-size: cover;
+            background-position: center;
+            border-radius: 20px 20px 0 0;
+        }
+        
+        .service-content {
+            padding: 1.5rem;
+            min-height: 160px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        
+        .service-arrow {
+            background: var(--gold);
+            color: var(--white);
+            border: none;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            align-self: center;
+        }
+        
+        .service-arrow:hover {
+            background: var(--gold-light);
+            transform: scale(1.1);
         }
         .service-icon {
             display: none;
         }
         .service-card h3 {
-            font-size: 1.6rem;
+            font-size: 1.4rem;
             font-weight: 600;
-            color: var(--white);
-            margin-bottom: 1.5rem;
-            position: relative;
-            z-index: 2;
-            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
+            color: var(--primary);
+            margin-bottom: 1rem;
             font-family: 'Playfair Display', serif;
             letter-spacing: -0.01em;
-            transition: all 0.3s ease;
-        }
-        
-        .service-card:hover h3 {
-            color: var(--accent-light);
-            transform: translateY(-5px);
-            text-shadow: 0 0 20px rgba(59, 130, 246, 0.5);
         }
         .service-card p {
-            color: rgba(255, 255, 255, 0.95);
-            line-height: 1.7;
-            position: relative;
-            z-index: 2;
-            text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8);
-            font-size: 1.05rem;
-            font-weight: 300;
-            transition: all 0.3s ease;
-        }
-        
-        .service-card:hover p {
-            color: var(--white);
-            transform: translateY(-3px);
+            color: var(--text-light);
+            line-height: 1.6;
+            font-size: 0.95rem;
+            margin-bottom: 1rem;
         }
         .about-section {
             background: var(--gray-50);
@@ -525,7 +532,7 @@
         }
         
         .about-image:hover img {
-            transform: scale(1.02) translateY(-5px);
+            
         }
         .contact-section {
             background: 
@@ -908,7 +915,6 @@
         }
         
         .partner-logo:hover {
-            transform: translateY(-10px) scale(1.05);
             box-shadow: 0 20px 50px rgba(59, 130, 246, 0.15);
             border-color: var(--accent);
         }
@@ -921,15 +927,12 @@
             max-height: 120px;
             width: auto;
             height: auto;
-            filter: grayscale(20%) brightness(0.9);
-            transition: all 0.4s ease;
             position: relative;
             z-index: 1;
         }
         
         .partner-logo:hover img {
             filter: grayscale(0%) brightness(1);
-            transform: scale(1.1);
         }
         .team-section {
             background: var(--gray-50);
@@ -1256,6 +1259,12 @@
             .form-row {
                 grid-template-columns: 1fr;
             }
+            .zoho-content,
+            .microsoft-content,
+            .refurbisher-content {
+                grid-template-columns: 1fr !important;
+                gap: 2rem !important;
+            }
         }
         
         /* Small Mobile Styles */
@@ -1321,6 +1330,8 @@
     </header>
 
     <section class="hero" id="home">
+        <img src="Modern Business.jpg" alt="Modern Business" class="hero-image">
+        <div class="hero-overlay"></div>
         <div class="container">
             <h1 class="elegant-text">Your Trusted Technology Partner!</h1>
             <p>Transform your business with our comprehensive IT services. From custom software development to strategic consulting, we deliver solutions that drive growth and innovation.</p>
@@ -1332,51 +1343,117 @@
         <div class="container">
             <h2 class="section-title elegant-text fade-in">Our Services</h2>
             <div class="services-grid">
-                <div class="service-card" style="background-image: url('Custom Software Development.jpg')">
-                    <h3>Custom Software Development</h3>
-                    <p>Build scalable, secure applications tailored to your business needs using cutting-edge technologies and industry best practices.</p>
+                <div class="service-card">
+                    <div class="service-image" style="background-image: url('IT Strategy and Consulting.jpg')"></div>
+                    <div class="service-content">
+                        <h3>IT Consulting & Managed Services</h3>
+                        <p>Strategic technology planning and comprehensive managed IT services to optimize your infrastructure and accelerate business growth.</p>
+                        <button class="service-arrow" onclick="openModal('itConsultingModal')">→</button>
+                    </div>
                 </div>
-                <div class="service-card" style="background-image: url('IT Strategy and Consulting.jpg')">
-                    <h3>IT Strategy & Consulting</h3>
-                    <p>Strategic technology planning and consulting to optimize your IT investments and accelerate digital transformation.</p>
+                <div class="service-card">
+                    <div class="service-image" style="background-image: url('Custom Software Development.jpg')"></div>
+                    <div class="service-content">
+                        <h3>Software & Hardware Sales</h3>
+                        <p>Premium software licensing and enterprise-grade hardware solutions tailored to meet your organization's specific requirements.</p>
+                        <button class="service-arrow" onclick="openModal('softwareHardwareModal')">→</button>
+                    </div>
                 </div>
-                <div class="service-card" style="background-image: url('Cloud Solutions.jpg')">
-                    <h3>Cloud Solutions</h3>
-                    <p>Seamless cloud migration, management, and optimization services to enhance scalability and reduce operational costs.</p>
+                <div class="service-card">
+                    <div class="service-image" style="background-image: url('Tailored IT Solutions.jpg')"></div>
+                    <div class="service-content">
+                        <h3>Government Contracting Services</h3>
+                        <p>Specialized IT solutions and services designed to meet government compliance requirements and public sector needs.</p>
+                        <button class="service-arrow" onclick="openModal('governmentModal')">→</button>
+                    </div>
                 </div>
-                <div class="service-card" style="background-image: url('Cybersecurity.jpg')">
-                    <h3>Cybersecurity</h3>
-                    <p>Comprehensive security solutions to protect your digital assets and ensure compliance with industry standards.</p>
+                <div class="service-card">
+                    <div class="service-image" style="background-image: url('Cloud Solutions.jpg')"></div>
+                    <div class="service-content">
+                        <h3>Cloud Computing & Infrastructure</h3>
+                        <p>Seamless cloud migration, infrastructure management, and optimization services to enhance scalability and reduce operational costs.</p>
+                        <button class="service-arrow" onclick="openModal('cloudModal')">→</button>
+                    </div>
                 </div>
-                <div class="service-card" style="background-image: url('Data Analytics.jpg')">
-                    <h3>Data Analytics</h3>
-                    <p>Transform raw data into actionable insights with advanced analytics and business intelligence solutions.</p>
+                <div class="service-card">
+                    <div class="service-image" style="background-image: url('Cybersecurity.jpg')"></div>
+                    <div class="service-content">
+                        <h3>Cybersecurity Solutions</h3>
+                        <p>Comprehensive security solutions to protect your digital assets and ensure compliance with industry standards and regulations.</p>
+                        <button class="service-arrow" onclick="openModal('cybersecurityModal')">→</button>
+                    </div>
                 </div>
-                <div class="service-card" style="background-image: url('24 hour Support.jpg')">
-                    <h3>24/7 IT Support</h3>
-                    <p>Round-the-clock technical support and maintenance to keep your systems running smoothly and efficiently.</p>
+                <div class="service-card">
+                    <div class="service-image" style="background-image: url('24 hour Support.jpg')"></div>
+                    <div class="service-content">
+                        <h3>24/7 IT Support</h3>
+                        <p>Round-the-clock technical support and maintenance to keep your systems running smoothly and efficiently at all times.</p>
+                        <button class="service-arrow" onclick="openModal('supportModal')">→</button>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="section about-section" id="about">
+    <section class="section zoho-section" id="zoho">
         <div class="container">
-            <div class="about-content">
-                <div class="about-text">
-                    <h2 class="elegant-text fade-in">About Noldith</h2>
-                    <p>At Noldith, we are passionate about transforming businesses through innovative technology. Founded with a vision to bridge the gap between complex IT challenges and practical solutions, we have grown into a trusted partner for organizations seeking digital excellence.</p>
-                    <p>Our team of experienced professionals combines deep technical expertise with strategic business insight to deliver solutions that not only meet today's needs but also prepare you for tomorrow's opportunities.</p>
-                    <p>We believe in building lasting partnerships with our clients, understanding their unique challenges, and crafting tailored solutions that drive real business value.</p>
+            <h2 class="section-title elegant-text fade-in">Zoho Productivity</h2>
+            <p style="text-align: center; font-size: 1.3rem; color: var(--text-dark); margin-bottom: 3rem; font-weight: 500;">Simplify Work, Boost Productivity</p>
+            <div class="zoho-content" style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center;">
+                <div>
+                    <p style="font-size: 1.15rem; line-height: 1.8; color: var(--text-light); margin-bottom: 2rem;">At Noldith, we're proud to be an official Zoho Workplace Partner, helping businesses across Ghana and beyond simplify the way they work.</p>
+                    <p style="font-size: 1.15rem; line-height: 1.8; color: var(--text-light); margin-bottom: 2rem;">Zoho Workplace is a secure, ad-free, and all-in-one office suite that brings together tools like Zoho Mail, Writer, Sheet, Show, WorkDrive, Cliq, and Meeting. Whether you're managing projects, collaborating across teams, or streamlining communication,</p>
+                    <h3 style="font-size: 1.4rem; font-weight: 600; color: var(--primary); margin-bottom: 1rem; font-family: 'Playfair Display', serif;">TEAM COLLABORATION MADE EASY</h3>
+                    <h4 style="font-size: 1.2rem; font-weight: 500; color: var(--text-dark); margin-bottom: 1.5rem;">WITH ZOHO WORKPLACE</h4>
+                    <a href="zoho.html" style="display: inline-block; background: var(--gradient-gold); color: var(--primary); padding: 12px 30px; border-radius: 25px; text-decoration: none; font-weight: 600; transition: all 0.3s ease;">Explore Zoho's suite of Applications</a>
                 </div>
-                <div class="about-image">
-                    <img src="Tailored IT Solutions.jpg" alt="About Noldith IT Solutions">
+                <div>
+                    <img src="maxresdefault.jpg" alt="Zoho Productivity" style="width: 100%; border-radius: 20px; box-shadow: 0 20px 50px rgba(0,0,0,0.15);">
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="section microsoft-section" id="microsoft">
+        <div class="container">
+            <h2 class="section-title elegant-text fade-in">Microsoft Solutions</h2>
+            <p style="text-align: center; font-size: 1.3rem; color: var(--text-dark); margin-bottom: 3rem; font-weight: 500;">Empower Your Business with Microsoft</p>
+            <div class="microsoft-content" style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center;">
+                <div>
+                    <img src="What-is-Microsoft-365-scaled.jpg" alt="Microsoft Solutions" style="width: 100%; border-radius: 20px; box-shadow: 0 20px 50px rgba(0,0,0,0.15);">
+                </div>
+                <div>
+                    <p style="font-size: 1.15rem; line-height: 1.8; color: var(--text-light); margin-bottom: 2rem;">At Noldith, we're proud to be a Microsoft Partner, helping businesses across Ghana and beyond leverage the power of Microsoft's comprehensive technology ecosystem.</p>
+                    <p style="font-size: 1.15rem; line-height: 1.8; color: var(--text-light); margin-bottom: 2rem;">Microsoft offers a complete suite of productivity, collaboration, and cloud solutions including Microsoft 365, Azure, Teams, Power Platform, and Surface devices. Whether you're modernizing your workplace, migrating to the cloud, or building custom applications,</p>
+                    <h3 style="font-size: 1.4rem; font-weight: 600; color: var(--primary); margin-bottom: 1rem; font-family: 'Playfair Display', serif;">DIGITAL TRANSFORMATION MADE SIMPLE</h3>
+                    <h4 style="font-size: 1.2rem; font-weight: 500; color: var(--text-dark); margin-bottom: 1.5rem;">WITH MICROSOFT SOLUTIONS</h4>
+                    <a href="https://noldith.dmc-microsite.com/" target="_blank" style="display: inline-block; background: var(--gradient-gold); color: var(--primary); padding: 12px 30px; border-radius: 25px; text-decoration: none; font-weight: 600; transition: all 0.3s ease;">Explore Microsoft Solutions</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="section partners-section" id="partners">
+    <section class="section refurbisher-section" id="refurbisher">
+        <div class="container">
+            <h2 class="section-title elegant-text fade-in">Certified Microsoft Refurbisher</h2>
+            <p style="text-align: center; font-size: 1.3rem; color: var(--text-dark); margin-bottom: 3rem; font-weight: 500;">Quality Refurbished Technology Solutions</p>
+            <div class="refurbisher-content" style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center;">
+                <div>
+                    <p style="font-size: 1.15rem; line-height: 1.8; color: var(--text-light); margin-bottom: 2rem;">As a Certified Microsoft Refurbisher, Noldith provides high-quality refurbished computers and devices that meet Microsoft's strict standards for performance, reliability, and security.</p>
+                    <p style="font-size: 1.15rem; line-height: 1.8; color: var(--text-light); margin-bottom: 2rem;">Our refurbished devices come with genuine Microsoft software, comprehensive warranties, and professional support. We help businesses and individuals access premium technology at affordable prices while promoting environmental sustainability through device reuse.</p>
+                    <h3 style="font-size: 1.4rem; font-weight: 600; color: var(--primary); margin-bottom: 1rem; font-family: 'Playfair Display', serif;">SUSTAINABLE TECHNOLOGY SOLUTIONS</h3>
+                    <h4 style="font-size: 1.2rem; font-weight: 500; color: var(--text-dark); margin-bottom: 1.5rem;">CERTIFIED QUALITY GUARANTEED</h4>
+                    <a href="#contact" style="display: inline-block; background: var(--gradient-gold); color: var(--primary); padding: 12px 30px; border-radius: 25px; text-decoration: none; font-weight: 600; transition: all 0.3s ease;">Learn More About Our Refurbished Devices</a>
+                </div>
+                <div>
+                    <img src="refurbisher.jpg" alt="Microsoft Certified Refurbisher" style="width: 100%; border-radius: 20px; box-shadow: 0 20px 50px rgba(0,0,0,0.15);">
+                </div>
+            </div>
+        </div>
+    </section>
+
+<section class="section partners-section" id="partners">
         <div class="container">
             <h2 class="section-title elegant-text fade-in">MEET OUR INTEGRATION PARTNERS</h2>
             <p style="text-align: center; font-size: 1.1rem; color: var(--text-light); margin-bottom: 2rem;">At Noldith, we are proud to collaborate with a network of trusted partners who share our commitment to innovation, quality, and impact. Together, we combine strengths to deliver exceptional value and drive meaningful solutions for our clients. These partnerships are at the heart of what we do, enabling us to grow, evolve, and make a lasting difference.</p>
@@ -1451,16 +1528,12 @@
                         <div class="form-group">
                             <select name="service" required>
                                 <option value="">Select Service of Interest</option>
-                                <option value="Custom Software Development">Custom Software Development</option>
-                                <option value="IT Strategy & Consulting">IT Strategy & Consulting</option>
-                                <option value="Cloud Solutions">Cloud Solutions</option>
+                                <option value="IT Consulting & Managed Services">IT Consulting & Managed Services</option>
+                                <option value="Software & Hardware Sales">Software & Hardware Sales</option>
+                                <option value="Government Contracting Services">Government Contracting Services</option>
+                                <option value="Cloud Computing & Infrastructure">Cloud Computing & Infrastructure</option>
                                 <option value="Cybersecurity Solutions">Cybersecurity Solutions</option>
-                                <option value="Data Analytics & Business Intelligence">Data Analytics & Business Intelligence</option>
-                                <option value="Microsoft Solutions">Microsoft Solutions</option>
-                                <option value="AWS Cloud Services">AWS Cloud Services</option>
-                                <option value="Zoho Business Applications">Zoho Business Applications</option>
-                                <option value="Digital Transformation">Digital Transformation</option>
-                                <option value="24/7 IT Support & Maintenance">24/7 IT Support & Maintenance</option>
+                                <option value="24/7 IT Support">24/7 IT Support</option>
                                 <option value="Other">Other</option>
                             </select>
                         </div>
@@ -1485,7 +1558,7 @@
             </div>
             
             <div class="social-section">
-                <h3>Follow Us</h3>
+                <h3>Follow Noldith</h3>
                 <div class="social-icons">
                     <a href="https://linkedin.com/company/noldith" class="social-icon">
                         <img src="LinkedIn logo.png" alt="LinkedIn">
@@ -1567,6 +1640,79 @@
             <h3>Zoho</h3>
             <p>Zoho is a comprehensive suite of business applications that helps organizations streamline operations, enhance productivity, and drive growth through integrated cloud-based solutions.</p>
             <p>Through our partnership with Zoho, Noldith delivers powerful business automation and productivity solutions. We help organizations optimize their workflows and achieve operational excellence with Zoho's comprehensive platform.</p>
+        </div>
+    </div>
+
+    <!-- Service Detail Modals -->
+    <div id="itConsultingModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('itConsultingModal')">&times;</span>
+            <h3>IT Consulting & Managed Services</h3>
+            <ul>
+                <li>Tailored IT strategies for small and medium-sized businesses (SMBs)</li>
+                <li>Microsoft Power Platform solutions for business automation</li>
+                <li>Microsoft Teams and SharePoint implementation and optimization</li>
+                <li>Remote monitoring, cybersecurity, and backup solutions</li>
+                <li>IT infrastructure assessment and optimization</li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="softwareHardwareModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('softwareHardwareModal')">&times;</span>
+            <h3>Software & Hardware Sales</h3>
+            <ul>
+                <li>Exclusive partnerships with leading software and hardware vendors</li>
+                <li>Microsoft software licensing, deployment, and management services</li>
+                <li>Enterprise and consumer IT solutions, including Microsoft Surface devices</li>
+                <li>Competitive pricing and seamless integration services</li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="governmentModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('governmentModal')">&times;</span>
+            <h3>Government Contracting Services</h3>
+            <ul>
+                <li>IT solutions for government agencies</li>
+                <li>Compliance with government procurement requirements</li>
+                <li>Infrastructure development and digital transformation services</li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="cloudModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('cloudModal')">&times;</span>
+            <h3>Cloud Computing & Infrastructure</h3>
+            <ul>
+                <li>Microsoft 365 setup, integration, and support for businesses</li>
+                <li>Hybrid and multi-cloud architecture solutions tailored to client needs</li>
+                <li>Cloud migration and management services</li>
+                <li>Scalable cloud-based solutions for businesses</li>
+                <li>Hybrid and multi-cloud architecture</li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="cybersecurityModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('cybersecurityModal')">&times;</span>
+            <h3>Cybersecurity Solutions</h3>
+            <ul>
+                <li>Data encryption, firewall, and endpoint security services</li>
+                <li>Compliance with global cybersecurity standards</li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="supportModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('supportModal')">&times;</span>
+            <h3>24/7 IT Support</h3>
+            <p>Round-the-clock technical support and maintenance to keep your systems running smoothly and efficiently at all times.</p>
         </div>
     </div>
 
@@ -1653,14 +1799,7 @@
                 heading.classList.add('elegant-text');
             });
             
-            // Parallax effect for hero section
-            window.addEventListener('scroll', function() {
-                const scrolled = window.pageYOffset;
-                const hero = document.querySelector('.hero');
-                if (hero) {
-                    hero.style.transform = `translateY(${scrolled * 0.5}px)`;
-                }
-            });
+
             
             // Add hover effects to navigation
             const navLinks = document.querySelectorAll('nav a');

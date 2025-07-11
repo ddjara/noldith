@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Zoho Workplace - Noldith Company Limited</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #0f172a;
+            --secondary: #1e293b;
+            --accent: #64748b;
+            --accent-light: #94a3b8;
+            --accent-dark: #475569;
+            --gold: #f59e0b;
+            --gold-light: #fbbf24;
+            --text-dark: #1e293b;
+            --text-light: #64748b;
+            --white: #ffffff;
+            --gray-50: #f8fafc;
+            --gray-100: #f1f5f9;
+            --gray-200: #e2e8f0;
+            --gradient-gold: linear-gradient(135deg, #f59e0b 0%, #fbbf24 50%, #f97316 100%);
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        header {
+            background: var(--primary);
+            color: var(--white);
+            padding: 1rem 0;
+        }
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            font-size: 1.8rem;
+            font-weight: 700;
+            font-family: 'Playfair Display', serif;
+        }
+        .logo img {
+            width: 50px;
+            height: 50px;
+        }
+        nav a {
+            color: var(--white);
+            text-decoration: none;
+            margin-left: 2rem;
+            transition: color 0.3s;
+        }
+        nav a:hover {
+            color: var(--gold);
+        }
+        .hero {
+            background: var(--gray-50);
+            padding: 80px 0;
+            text-align: center;
+        }
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 1rem;
+            font-family: 'Playfair Display', serif;
+        }
+        .hero p {
+            font-size: 1.2rem;
+            color: var(--text-light);
+            margin-bottom: 2rem;
+        }
+        .section {
+            padding: 60px 0;
+        }
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 3rem;
+            text-align: center;
+            font-family: 'Playfair Display', serif;
+        }
+        .apps-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+        .app-category h3 {
+            color: var(--primary);
+            font-size: 1.3rem;
+            margin-bottom: 1.5rem;
+            font-family: 'Playfair Display', serif;
+        }
+        .app-item {
+            margin-bottom: 1.5rem;
+            padding: 1rem;
+            background: var(--white);
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        .app-item strong {
+            color: var(--primary);
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+        .benefits-section {
+            background: var(--gray-50);
+        }
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        .benefit-card {
+            padding: 1.5rem;
+            background: var(--white);
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            font-weight: 500;
+        }
+        footer {
+            background: var(--primary);
+            color: var(--white);
+            text-align: center;
+            padding: 2rem 0;
+        }
+        @media (max-width: 768px) {
+            .apps-grid {
+                grid-template-columns: 1fr;
+            }
+            .benefits-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .hero h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <img src="noldith logo.png" alt="Noldith Logo" />
+                    Noldith
+                </div>
+                <nav>
+                    <a href="index.html">Home</a>
+                    <a href="index.html#services">Services</a>
+                    <a href="index.html#about">About</a>
+                    <a href="index.html#contact">Contact</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>Zoho Workplace</h1>
+            <p>TEAM COLLABORATION MADE EASY WITH ZOHO WORKPLACE</p>
+            <img src="maxresdefault.jpg" alt="Zoho Workplace" style="max-width: 600px; width: 100%; border-radius: 20px; box-shadow: 0 20px 50px rgba(0,0,0,0.15); margin-top: 2rem;">
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Zoho Applications Suite</h2>
+            <div class="apps-grid">
+                <div class="app-category">
+                    <h3>Email and Collaboration</h3>
+                    <div class="app-item">
+                        <strong>Mail</strong>
+                        Host your business email with Zoho Mail and enjoy a secure, feature-rich emailing platform
+                    </div>
+                    <div class="app-item">
+                        <strong>Cliq</strong>
+                        Send private and group messages to your colleagues from anywhere, from any device
+                    </div>
+                    <div class="app-item">
+                        <strong>Meeting</strong>
+                        Everything you need to host online meetings and webinars. Conduct Q&A sessions, share screens and more.
+                    </div>
+                </div>
+                <div class="app-category">
+                    <h3>Productivity</h3>
+                    <div class="app-item">
+                        <strong>Sheet</strong>
+                        Build robust spreadsheets, and organize and scrutinize your data online
+                    </div>
+                    <div class="app-item">
+                        <strong>Show</strong>
+                        Create stunning presentations collaboratively with animations, templates, and live broadcasting features.
+                    </div>
+                    <div class="app-item">
+                        <strong>Writer</strong>
+                        A powerful online word processor for creating, editing, and collaborating on documents in real time.
+                    </div>
+                </div>
+                <div class="app-category">
+                    <h3>Collaboration and File Management</h3>
+                    <div class="app-item">
+                        <strong>Calendar</strong>
+                        Smart scheduling with shared calendars, event reminders, and team visibility — syncs across devices and tools.
+                    </div>
+                    <div class="app-item">
+                        <strong>Connect</strong>
+                        An internal social network and collaboration platform that keeps your teams aligned with forums, feeds, tasks, and knowledge sharing — perfect for building a connected workplace.
+                    </div>
+                    <div class="app-item">
+                        <strong>Workdrive</strong>
+                        A secure cloud storage and file management system designed for teams — organize, share, and work together on documents easily.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section benefits-section">
+        <div class="container">
+            <h2 class="section-title">Why do we recommend Zoho Workplace?</h2>
+            <div class="benefits-grid">
+                <div class="benefit-card">All-in-one suite</div>
+                <div class="benefit-card">Affordable Pricing</div>
+                <div class="benefit-card">Data Privacy and Security</div>
+                <div class="benefit-card">User friendly Interface</div>
+                <div class="benefit-card">Scalable for growing teams</div>
+                <div class="benefit-card">Seamless integration</div>
+                <div class="benefit-card">Real time Collaboration</div>
+                <div class="benefit-card">Remote work ready</div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Noldith IT Solutions. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
